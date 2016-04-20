@@ -59,8 +59,10 @@ Part 4
 
 In the previous parts you developed a reliable architecture for the network. In this final part you have to complete the described functionality to create a fully operational system. More specifically this means that all methods should work as expected (taking into account privacy, age limits and star ratings) in an efficient way. 
 Previously we introduced timestamps, from now on we will use Unix timestamps. A Unix timestamp is an integer number in seconds starting from 1st of January 1970. In Java, you can calculate the current timestamp as follows: 
+
 public int getCurrentTime() {
-return (int) (System.currentTimeMillis() / 1000L); 
+            return (int) (System.currentTimeMillis() / 1000L); 
 } 
+
 When testing your network you can add or subtract time in seconds when posting messages. To combine the timestamp and star rating you can add one hour (3600 seconds) per star. For example, if the current time is 1448877872 you can add 14400 seconds for a 4-star rating, i.e. 1448892272. In other words, these posts will have a timestamp in the future and are therefore pushed forward. Paid advertisements are equivalent to a 0 star rating. 
 
